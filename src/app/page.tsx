@@ -11,7 +11,7 @@ export default async function Home() {
 
   const beerOrders = await store
     .openSession()
-    .query<BeerOrder>({ collection: "beerOrders" })
+    .query<BeerOrder>({ collection: "BeerOrders" })
     .orderBy("createDate")
     .all();
 

@@ -1,12 +1,10 @@
-export interface Entity {
-  id: string;
-  collection: string;
-}
 
-export interface BeerOrder extends Entity {
-  collection: "beerOrders";
-  beerType: string;
-  liters: number;
-  isDone: boolean;
-  createDate: Date;
+export class BeerOrder {
+  constructor(
+    public id: string | null = null,
+    public beerType: string = "",
+    public liters: number = 0,
+    public isDone: boolean = false,
+    public createDate: Date = new Date()
+  ) {}
 }
