@@ -5,7 +5,7 @@ import { BeerOrder } from "../db/models";
 import { store } from "../db/store";
 
 export async function addOrderAction(formData: FormData) {
-  const beerType = formData.get("beerType") as string;
+  const beerType = String(formData.get("beerType"));
   const liters = Number(formData.get("liters"));
 
   const session = store.openSession();
