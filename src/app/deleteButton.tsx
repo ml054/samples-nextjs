@@ -7,9 +7,7 @@ export default function DeleteButton() {
 
   return (
     <button
-      className={`bg-red-500 text-white rounded-md p-2 hover:bg-red-600 transition-colors w-full ${
-        pending ? "opacity-50" : ""
-      }`}
+      className={`delete-button ${pending ? "opacity-50" : ""}`}
       disabled={pending}
     >
       {pending ? "Deleting order..." : "Delete order"}

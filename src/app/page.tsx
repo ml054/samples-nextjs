@@ -5,6 +5,7 @@ import { store } from "../db/store";
 import AddOrderButton from "./addOrderButton";
 import DeleteButton from "./deleteButton";
 import ToggleOrderButton from "./toggleOrderButton";
+import "./page.css";
 
 export default async function Home() {
   noStore();
@@ -16,32 +17,29 @@ export default async function Home() {
     .all();
 
   return (
-    <main className="w-96 mx-auto p-4 mt-8 bg-gray-800 rounded-md">
-      <h1 className="text-2xl font-bold text-white mb-4 text-center">Beer Order</h1>
+    <main className="beer-order-page">
+      <h1 className="title">Beer Order</h1>
 
-      <form action={addOrderAction} className="flex flex-col gap-4 ">
-        <label className="flex flex-col">
+      <form action={addOrderAction} className="add-form">
+        <label>
           Type
-          <input type="text" name="beerType" required className="text-black p-1" />
+          <input type="text" name="beerType" required />
         </label>
-        <label className="flex flex-col">
+        <label>
           Liters
-          <input type="number" name="liters" required min="1" className="text-black p-1 " />
+          <input type="number" name="liters" required min="1" />
         </label>
 
         <AddOrderButton />
       </form>
 
       {beerOrders.map((order) => (
-        <div
-          key={order.id}
-          className="flex justify-between items-center bg-gray-700 p-2 rounded-md transition-colors hover:bg-gray-600 mt-4"
-        >
+        <div key={order.id} className="order-item">
           <div>
             <form action={toggleOrderAction.bind(null, order.id)}>
               <ToggleOrderButton beerType={order.beerType} isDone={order.isDone} />
             </form>
-            <span className="text-gray-400">{order.liters} liters</span>
+            <span className="liters-text">{order.liters} liters</span>
           </div>
           <form action={deleteOrderAction.bind(null, order.id)}>
             <DeleteButton />
