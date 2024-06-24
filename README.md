@@ -31,3 +31,6 @@ pnpm dev
 # or
 bun dev
 ```
+
+# Screenshot
+![Example](https://github.com/ravendb/samples-nextjs/assets/47967925/54399340-0ad9-4e68-8f1d-90f10fa9e22e)
