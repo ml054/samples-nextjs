@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "14.1.2",
+    "next": "^14.2.5",
     "ravendb": "file:ravendb-6.0.0.tgz",
     "react": "^18",
     "react-dom": "^18"
